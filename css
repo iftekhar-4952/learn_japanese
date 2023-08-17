@@ -1,0 +1,167 @@
+/* styles.css */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  text-align: center;
+}
+
+.divider {
+
+  border-bottom: 1px solid #ccc;
+
+  margin: 10px 0; 
+
+}
+
+.word,
+.sentence {
+  margin: 0 auto 10px;
+  text-align: center;
+}
+
+/* Button container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Buttons */ 
+button {
+  margin: 0 10px;
+}
+
+
+
+how do I make the buttons align to the center of the screen with 20px gap between them?
+
+ChatGPT
+To align the buttons to the center of the screen with a 20px gap between them, you can make the following adjustments to your existing CSS code:
+
+css
+Copy code
+/* styles.css */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0; /* Reset default body margin */
+}
+
+/* ... (other styles) ... */
+
+/* Button container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Add margin to create a gap between buttons and other content */
+}
+
+/* Buttons */
+button {
+  margin: 0 10px; /* Adjust horizontal margin */
+}
+In the .button-container class, we're using justify-content: center; to horizontally center the buttons and margin-top: 20px; to create a gap between the buttons and other content. In the button class, we're using margin: 0 10px; to create a 20px gap between the buttons.
+
+With these changes, your buttons should now be aligned to the center of the screen with a 20px gap between them. Make sure to include this updated CSS code in your HTML file to see the changes.
+
+
+
+
+User
+there are two buttons. their position should be absolute at the center of the screen. the buttons should be side by side horizontally
+ChatGPT
+I apologize for the confusion. If you want the buttons to be absolutely positioned at the center of the screen, side by side horizontally, and with a 20px gap between them, you can use the following CSS:
+
+css
+Copy code
+/* styles.css */
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ... (other styles) ... */
+
+/* Button container */
+.button-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Buttons */
+button {
+  margin: 0 10px;
+}
+In the .button-container class, we're using position: absolute; to make the container's position absolute, top: 50%; and left: 50%; to position it at the center of the screen, and transform: translate(-50%, -50%); to center it precisely. The rest of the code remains the same as before to ensure the buttons are horizontally aligned with a 20px gap between them.
+
+Remember to include this updated CSS code in your HTML file for the changes to take effect.
+
+
+
+
+User
+move the buttons to the left and right borders of the card
+ChatGPT
+To position the buttons at the left and right borders of the card, you'll need to adjust the layout of the .button-container within the .card element. Here's how you can modify your CSS:
+
+css
+Copy code
+/* styles.css */
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  text-align: center;
+  position: relative; /* Add this to establish a positioning context for absolute positioning */
+}
+
+.divider {
+  border-bottom: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+.word,
+.sentence {
+  margin: 0 auto 10px;
+  text-align: center;
+}
+
+/* Button container */
+.button-container {
+  position: absolute;
+  display: flex;
+  justify-content: space-between; /* Distributes items along the main axis with equal space between them */
+  width: 100%; /* Occupy the full width of the card */
+  bottom: 0; /* Position at the bottom of the card */
+  padding: 20px 0; /* Add padding for spacing from the bottom */
+}
+
+/* Buttons */
+button {
+  margin: 0 10px;
+}
